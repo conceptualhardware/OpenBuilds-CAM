@@ -5,7 +5,6 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>OpenBuilds CAM Gcode Creator - Public Beta</title>
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<meta name="author" content="" />
@@ -190,7 +189,18 @@
 											</div>
 											<span class="title">Undo/Redo</span>
 										</div>
+										<div class="group">
+											<div class="ribbon-group">
+												<button class="ribbon-button" onclick="alreadyDetected = false; checkIfDriverIsInstalled(); Metro.dialog.open('#settingsmodal');">
+													<span class="icon">
+														<span class="fa fa-fw fa-cogs"></span>
+													</span>
+													<span class="caption">Settings</span>
+												</button>
+											</div>
+											<span class="title">Settings</span>	
 									</div>
+									<!--
 									<div class="section" id="section-settings">
 										<div class="group">
 											<button class="ribbon-button" onclick="alreadyDetected = false; checkIfDriverIsInstalled(); Metro.dialog.open('#settingsmodal');">
@@ -235,7 +245,7 @@
 											<span class="title">Undo/Redo</span>
 										</div>
 									</div>
-
+									-->	
 								</div>
 							</nav>
 							<div id="renderArea">
@@ -372,91 +382,6 @@
 								<div id="toolpathtree">
 								</div>
 								<!-- Toolpaths Here -->
-							</div>
-						</div>
-
-						<div class="window mt-2 drop-shadow">
-							<div class="window-caption bg-openbuilds">
-								<i class="fa fa-save fa-fw ml-1 mr-1"></i>
-								<span class="title">Save GCODE File</span>
-							</div>
-							<div class="window-content p-1" id="connectiontree" style="overflow-y:scroll;">
-
-
-								<div class="row" style="margin-left: 1px; margin-right: 1px;">
-									<div class="cell p-0">
-										<div id="noDriverDetected" style="display:none;">
-
-											<!-- <p class="text-small mb-1">Unable to connect to CONTROL: Please Save your GCODE then Open it in OpenBuilds CONTROL </p> -->
-											<button class="button success drop-shadow disabled" title="Save GCODE" id="gcodesavebtn3" onclick="saveFile();"><span id="gcodeexporticon2" class="fa fa-save icon fg-white"></span> Save GCODE</button>
-											<hr>
-											<p class="text-small m-0 p-0" id="installDriverMessage">Save the GCODE to your Computer and then Open it using CONTROL</p>
-											<!-- <p class="text-small mb-1" id="installDriverHelp">If you have not installed it yet, you can download it below, or if you have the latest version installed already, please start it.<br> If you still see this message, we are
-												experiencing a temporary problem connecting to it and you can still use the Save button above<br>
-
-												<nav data-role="ribbonmenu">
-													<ul class="tabs-holder">
-														<li><a href="#tab-win"><i class="fab fa-windows"></i>&nbsp;Windows</a></li>
-														<li><a href="#tab-mac"><i class="fab fa-apple"></i>&nbsp;Mac</a></li>
-														<li><a href="#tab-linux"><i class="fab fa-linux"></i>&nbsp;Linux</a></li>
-													</ul>
-
-													<div class="content-holder">
-														<div class="section" id="tab-win">
-															<div id="downloadDrivers" class="info-button bg-green fg-white bd-green">
-																<a href="#" onclick="downloadDrivers('win')" class="button"><span class="fab fa-windows"></span> Windows (EXE)</a>
-																<a href="#" class="info omdavailversion">v1.0.0</a>
-															</div><br>
-														</div>
-														<div class="section" id="tab-mac">
-															<div id="downloadDrivers" class="info-button bg-green fg-white bd-green">
-																<a href="#" onclick="downloadDrivers('mac')" class="button"><span class="fab fa-apple"></span> MacOS (DMG)</a>
-																<a href="#" class="info omdavailversion">v1.0.0</a>
-															</div><br>
-														</div>
-														<div class="section" id="tab-linux">
-															<div>
-																<div id="downloadDrivers" class="info-button bg-green fg-white bd-green">
-																	<a href="#" onclick="downloadDrivers('deb')" class="button"><span class="fab fa-linux"></span> Linux (DEB)</a>
-																	<a href="#" class="info omdavailversion">v1.0.0</a>
-																</div>
-																<p>
-																	<div id="downloadDrivers" class="info-button bg-green fg-white bd-green">
-																		<a href="#" onclick="downloadDrivers('appimage')" class="button"><span class="fab fa-linux"></span> Linux (AppImage)</a>
-																		<a href="#" class="info omdavailversion">v1.0.0</a>
-																	</div>
-															</div>
-														</div>
-													</div>
-												</nav> -->
-
-
-
-
-										</div>
-
-										<div id="DriverDetected" style="display:none;">
-
-											<button class="image-button success" id="sendGcodeToMyMachine" onclick="sendGcodeToMyMachine()" disabled style="width: 100%">
-												<span class="icon"><span class="fas fa-play"></span></span>
-												<span class="caption">Transfer GCODE to OpenBuilds CONTROL</span>
-											</button>
-											<p class="text-small" id="detectedVersion"></p>
-											<p class="text-small" id="validDocuments"><i class='fas fa-times fa-fw fg-red'></i>2. No Documents yet</p>
-											<p class="text-small" id="validToolpaths"><i class='fas fa-times fa-fw fg-red'></i>3. No Toolpaths yet</p>
-											<p class="text-small" id="validGcode"><i class='fas fa-times fa-fw fg-red'></i>4. No GCODE yet</p>
-											<br>
-											<button class="image-button" id="activateDriver" onclick="activateDriver()" style="width: 100%">
-												<span class="icon"><span class="far fa-window-restore"></span></span>
-												<span class="caption">Show CONTROL Window</span>
-											</button>
-										</div>
-									</div>
-									<!-- <div class="cell">
-										<img src="driver.png" />
-									</div> -->
-								</div>
-
 							</div>
 						</div>
 					</div>
